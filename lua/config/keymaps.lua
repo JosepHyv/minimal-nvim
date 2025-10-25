@@ -45,3 +45,5 @@ local current_buf = vim.api.nvim_get_current_buf()
   end
 end, { desc = "Delete Buffer" })
 
+-- custom for some plugs 
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {noremap = true, desc = "Toggle File Explorer"})

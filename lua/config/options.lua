@@ -1,6 +1,7 @@
 local opt = vim.opt
 local wo = vim.wo
-vim.g.mapleader = " "
+local g = vim.g
+g.mapleader = " "
 vim.diagnostic.config({
   virtual_text = true,  
   underline = true,
@@ -29,4 +30,7 @@ opt.softtabstop = 4
 opt.expandtab = true 
 opt.encoding = 'utf-8'
 
+-- options for nvim-tree integration
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
