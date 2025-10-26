@@ -1,0 +1,32 @@
+return {
+	"nvim-treesitter/nvim-treesitter",
+	branch = "master",
+	lazy = false,
+	build = ":TSUpdate",
+	enable = true,
+	config = {
+		ensure_installed = {
+			"c",
+			"lua",
+			"vim",
+			"vimdoc",
+			"query",
+			"markdown",
+			"markdown_inline",
+			"go",
+			"javascript",
+			"typescript",
+			"rust",
+			"python",
+			"cmake",
+			"cpp",
+			"css",
+			"csv",
+		},
+		sync_install = true,
+		auto_install = true,
+	},
+	indent = {
+		enable = true,
+	},
+}
