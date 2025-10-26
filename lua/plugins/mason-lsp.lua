@@ -6,10 +6,10 @@ return {
             --- LSPs
           "html-lsp",
           "ruff",
+          "gopls",
           "clangd",
           "typescript-language-server",
           "tailwindcss-language-server",
-          "golangci-lint-language-server",
           "lua-language-server",
           "ccs-lsp",
           "pyright",
@@ -17,11 +17,11 @@ return {
           -- formatters
           "black",
           "prettier",
+          "prettierd",
           "stylua",
-          "cpplint",
+          "clang-format",
           "luacheck",
-          "gopls",
-          "golangci-lint",
+          "golines",
         },
         opts = {
                 ui = {
