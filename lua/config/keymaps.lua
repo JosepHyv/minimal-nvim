@@ -2,6 +2,11 @@ local keymap = vim.keymap
 local opts = {noremap = true, silent = true}
 
 
+-- Selection text and copy/delete
+keymap.set("n", "<leader>a", "gg<S-v>G", {desc = "Select All text"})
+keymap.set("n", "<leader>y", '"+y', {desc = "Copy to clipboard"})
+keymap.set({"n", "v"}, "<leader>d", '"+d', {desc = "Cut to clipboard", remap = true})
+
 keymap.set({"n", "v"}, "<leader>|", ":vsplit<CR>", {desc = "Split vertical"})
 keymap.set({"n", "v"}, "<leader>-", ":split<CR>", {desc = "Split Horizontal"}) 
 
