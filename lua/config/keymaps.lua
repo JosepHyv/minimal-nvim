@@ -47,4 +47,5 @@ keymap.set("n", "<leader>bd", function()
 end, { desc = "Delete Buffer" })
 
 -- custom for some plugs
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, desc = "Toggle File Explorer" })
+keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, desc = "Toggle File Explorer" })
+-- keymap.set({ "n", "i", "v" }, "<C-/>", "<cmd>ToggleTerm<CR>", { remap = true, desc = "Toggle Terminal" })
