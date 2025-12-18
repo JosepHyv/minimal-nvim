@@ -8,6 +8,10 @@ return {
   opts = {
     enter = true,
   },
+  popupmenu={
+    enabled = true,
+    backend = "nui"
+  },
   presets = {
     bottom_search = true,
     command_palette = true,

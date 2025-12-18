@@ -29,7 +29,7 @@ return {
 				"lua_ls",
 				"cssls",
 				"pyright",
-				"tree-sitter-cli",
+				-- "tree-sitter-cli",
 				"stylua",
 			},
 			html = {},

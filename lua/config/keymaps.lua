@@ -48,4 +48,9 @@ end, { desc = "Delete Buffer" })
 
 -- custom for some plugs
 keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, desc = "Toggle File Explorer" })
--- keymap.set({ "n", "i", "v" }, "<C-/>", "<cmd>ToggleTerm<CR>", { remap = true, desc = "Toggle Terminal" })
+
+keymap.set("n", "<Esc>", function()
+	require("notify").dismiss()
+	vim.cmd("noh")
+	vim.cmd("echo")
+end, { desc = "discard notifications" })
