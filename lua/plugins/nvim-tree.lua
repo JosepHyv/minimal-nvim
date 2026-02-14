@@ -9,18 +9,16 @@ return {
 		local nvim_tree = require("nvim-tree")
 		local api = require("nvim-tree.api")
 
-		-- vim.cmd([[
-		--           :hi      NvimTreeExecFile    guifg=#ffa0a0
-		--           :hi      NvimTreeSpecialFile guifg=#ff80ff gui=underline
-		--           :hi      NvimTreeSymlink     guifg=Yellow  gui=italic
-		--           :hi link NvimTreeImageFile   Title
-		--     ]])
 		nvim_tree.setup({
 			update_cwd = true,
 			respect_buf_cwd = true,
 			hijack_directories = { enable = false },
 			actions = {
 				change_dir = { restrict_above_cwd = true },
+			},
+			git = {
+				ignore = false,
+				enable = true,
 			},
 			view = {
 				cursorline = true,
@@ -31,7 +29,7 @@ return {
 				group_empty = true,
 			},
 			filters = {
-				dotfiles = true,
+				dotfiles = false,
 			},
 		})
 	end,
