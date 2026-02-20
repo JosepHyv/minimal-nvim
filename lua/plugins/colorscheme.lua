@@ -1,3 +1,36 @@
+-- return {
+-- 	"ellisonleao/gruvbox.nvim",
+-- 	priority = 1000,
+-- 	terminal_colors = true, -- add neovim terminal colors
+-- 	undercurl = true,
+-- 	underline = true,
+-- 	bold = true,
+-- 	italic = {
+-- 		strings = true,
+-- 		emphasis = true,
+-- 		comments = true,
+-- 		operators = false,
+-- 		folds = true,
+-- 	},
+-- 	strikethrough = true,
+-- 	invert_selection = false,
+-- 	invert_signs = false,
+-- 	invert_tabline = false,
+-- 	inverse = true, -- invert background for search, diffs, statuslines and errors
+-- 	contrast = "", -- can be "hard", "soft" or empty string
+-- 	palette_overrides = {},
+-- 	overrides = {},
+-- 	dim_inactive = false,
+-- 	transparent_mode = false,
+-- 	lazy = false,
+-- 	config = function()
+-- 		vim.g.lightline = "gruvbox"
+-- 		vim.cmd.colorscheme("gruvbox")
+-- 		-- vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
+-- 		vim.cmd([[highlight LineNr guifg=#999999]])
+-- 		vim.cmd([[highlight CursorLineNr guifg=#fafa07 gui=bold]])
+-- 	end,
+-- }
 return {
 	"sainnhe/sonokai",
 	lazy = false,
@@ -13,7 +46,7 @@ return {
 
 		-- vim.cmd([[highlight LineNr guifg=#999999]])
 		vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
-		-- vim.cmd([[highlight LineNr guifg=#999999]])
+		vim.cmd([[highlight LineNr guifg=#999999]])
 		vim.cmd([[highlight CursorLineNr guifg=#fafa07 gui=bold]])
 	end,
 }
