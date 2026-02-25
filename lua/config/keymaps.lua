@@ -60,7 +60,7 @@ keymap.set("n", "<leader>n", "<cmd>NoiceTelescope<CR>", { noremap = true, desc =
 
 -- sessions
 keymap.set("n", "<leader>rs", function()
-	require("persistence").load({ last = true })
+	require("persistence").load()
 end, { desc = "Load last session for the current directory" })
 
 keymap.set("n", "<leader>sp", function()
