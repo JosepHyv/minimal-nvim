@@ -3,7 +3,7 @@ return {
 	version = "*",
 	opts = {
 		direction = "float",
-		open_mapping = [[<c-j>]],
+		open_mapping = [[<C-S-J>]],
 		hide_numbers = true,
 		theme = "sonokai",
 		shade_terminals = true,
