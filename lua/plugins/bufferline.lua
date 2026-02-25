@@ -5,15 +5,16 @@ return {
 	event = "VeryLazy",
 	opts = {
 		options = {
-			padding = 1,
 			mode = "buffers",
+			padding = 0,
+			numbers = "ordinal",
+			color_icons = true,
 			show_buffer_close_icons = true,
 			always_show_bufferline = false,
-			separator_style = "slant",
-			-- indicator = {
-			-- 	icon = "| ",
-			-- 	style = "underline",
-			-- },
+			separator_style = "slope",
+			indicator = {
+				style = "underline",
+			},
 			diagnostics_indicator = function(count, level)
 				local icon = level:match("error") and " " or " "
 				return " " .. icon .. count
@@ -24,7 +25,7 @@ return {
 					text = "File Explorer",
 					text_align = "center",
 					separator = true,
-				}
+				},
 			},
 			-- diagnostics_indicator = function(count, level, diagnostics_dict, context)
 			-- 	return "(" .. count .. ")"
