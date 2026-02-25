@@ -3,8 +3,9 @@ return {
 	branch = "master",
 	lazy = false,
 	build = ":TSUpdate",
-	enable = true,
+    main = "nvim-treesitter.configs",
 	config = {
+        enable = true,
 		ensure_installed = {
 			"c",
 			"lua",
@@ -25,10 +26,10 @@ return {
 		},
 		sync_install = true,
 		auto_install = true,
+        indent = {
+            enable = true,
+        },
+        highlight = { enable = true },
+        folds = { enable = true },
 	},
-	indent = {
-		enable = true,
-	},
-	highlight = { enable = true },
-	folds = { enable = true },
 }
