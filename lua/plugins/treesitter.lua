@@ -3,9 +3,9 @@ return {
 	branch = "master",
 	lazy = false,
 	build = ":TSUpdate",
-    main = "nvim-treesitter.configs",
-	config = {
-        enable = true,
+	main = "nvim-treesitter.configs",
+	opts = {
+		enable = true,
 		ensure_installed = {
 			"c",
 			"lua",
@@ -26,10 +26,15 @@ return {
 		},
 		sync_install = true,
 		auto_install = true,
-        indent = {
-            enable = true,
-        },
-        highlight = { enable = true },
-        folds = { enable = true },
+		indent = {
+			enable = true,
+		},
+		highlight = { enable = true },
 	},
+    config = function(_, opts)
+        require("nvim-treesitter.configs").setup(opts)
+        vim.opt.foldmethod = "expr"
+        vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+        vim.opt.foldenable = false
+    end,
 }

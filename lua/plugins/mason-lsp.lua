@@ -44,7 +44,7 @@ return {
 			local key = vim.keymap
 			key.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
 			key.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
-            key.set("n", "gr", vim.lsp.buf.references, {desc = "Go to references"})
+			key.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
 			key.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Information" })
 		end,
 	},
