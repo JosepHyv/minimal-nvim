@@ -56,7 +56,7 @@ keymap.set("n", "<Esc>", function()
 	vim.cmd("echo")
 end, { desc = "discard notifications" })
 
-keymap.set("n", "<leader>n", "<cmd>NoiceTelescope<CR>", {noremap = true, desc = "Toggle Noice Telescope"})
+keymap.set("n", "<leader>n", "<cmd>NoiceTelescope<CR>", { noremap = true, desc = "Toggle Noice Telescope" })
 
 -- sessions
 keymap.set("n", "<leader>rs", function()
