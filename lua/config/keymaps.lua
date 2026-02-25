@@ -49,8 +49,24 @@ end, { desc = "Delete Buffer" })
 -- custom for some plugs
 keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, desc = "Toggle File Explorer" })
 
+-- noice
 keymap.set("n", "<Esc>", function()
 	require("notify").dismiss()
 	vim.cmd("noh")
 	vim.cmd("echo")
 end, { desc = "discard notifications" })
+
+keymap.set("n", "<leader>n", "<cmd>NoiceTelescope<CR>", {noremap = true, desc = "Toggle Noice Telescope"})
+
+-- sessions
+keymap.set("n", "<leader>rs", function()
+	require("persistence").load({ last = true })
+end, { desc = "Load last session for the current directory" })
+
+keymap.set("n", "<leader>sp", function()
+	require("persistence").stop()
+end, { desc = "Session wont't be sabed on exit" })
+
+keymap.set("n", "<leader>Ss", function()
+	require("persistence").select()
+end, { desc = "Select session to Load" })
