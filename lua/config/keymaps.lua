@@ -18,8 +18,8 @@ keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save Fi
 -- Change window
 keymap.set("n", "<C-h>", "<C-w><left>", opts)
 keymap.set("n", "<C-l>", "<C-w><right>", opts)
-keymap.set("n", "<C-j>", "<C-w><up>", opts)
-keymap.set("n", "<C-k>", "<C-w><down>", opts)
+keymap.set("n", "<C-k>", "<C-w><up>", opts)
+keymap.set("n", "<C-j>", "<C-w><down>", opts)
 
 -- Resize Windows
 keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
