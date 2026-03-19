@@ -5,12 +5,13 @@ return {
 		direction = "float",
 		open_mapping = [[<c-\>]],
 		hide_numbers = true,
+		terminal_mappings = true,
 		theme = "sonokai",
 		shade_terminals = true,
 		shading_factor = 2,
 		winbar = {
 			enabled = false,
-			name_formatter = function(term) --  term: Terminal
+			name_formatter = function(term)
 				return term.name
 			end,
 		},
@@ -23,4 +24,18 @@ return {
 			},
 		},
 	},
+	config = function(_, opts)
+		require("toggleterm").setup(opts)
+
+		function _G.set_terminal_keymaps()
+			local term_opts = { buffer = 0 }
+			vim.keymap.set("t", "<c-w>", [[<C-\><C-n>]], term_opts)
+			-- vim.keymap.set("t", "<c-h>", [[<Cmd>wincmd h<CR>]], term_opts)
+			-- vim.keymap.set("t", "<c-j>", [[<Cmd>wincmd j<CR>]], term_opts)
+			-- vim.keymap.set("t", "<c-k>", [[<Cmd>wincmd k<CR>]], term_opts)
+			-- vim.keymap.set("t", "<c-l>", [[<Cmd>wincmd l<CR>]], term_opts)
+		end
+
+		vim.cmd("autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()")
+	end,
 }
