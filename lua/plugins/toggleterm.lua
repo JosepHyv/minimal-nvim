@@ -2,19 +2,15 @@ return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
 	opts = {
-		direction = "float",
+		direction = "vertical",
 		open_mapping = [[<c-\>]],
 		hide_numbers = true,
+        persist_size = true,
 		terminal_mappings = true,
 		theme = "sonokai",
 		shade_terminals = true,
 		shading_factor = 2,
-		winbar = {
-			enabled = false,
-			name_formatter = function(term)
-				return term.name
-			end,
-		},
+        size = 70,
 		float_opts = {
 			border = "curved",
 			title_pos = "center",
