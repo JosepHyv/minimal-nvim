@@ -8,10 +8,6 @@ return {
     opts = {
         file_types = {'markdown', 'quatro'},
         render_modes = {'n', 't'},
-        completions = {
-            lsp = {
-                enable = true
-            }
-        }
+        latex = { enabled = false },
     },
 }

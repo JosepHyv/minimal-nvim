@@ -2,7 +2,7 @@ return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
 	opts = {
-		direction = "vertical",
+		direction = "float",
 		open_mapping = [[<c-\>]],
 		hide_numbers = true,
         persist_size = true,
@@ -10,7 +10,7 @@ return {
 		theme = "sonokai",
 		shade_terminals = true,
 		shading_factor = 2,
-        size = 70,
+        -- size = 70,
 		float_opts = {
 			border = "curved",
 			title_pos = "center",
