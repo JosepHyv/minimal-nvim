@@ -21,6 +21,10 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  install = { colorscheme = { "sonokai", "habamax" } },
+  install = { colorscheme = { "catppuccin-nvim", "sonokai", "habamax" } },
   checker = { enabled = true },
 })
+
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
+vim.cmd([[highlight LineNr guifg=#999999]])
+vim.cmd([[highlight CursorLineNr guifg=#fafa07 gui=bold]])
