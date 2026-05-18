@@ -1,9 +1,8 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	branch = "master",
+	branch = "main",
 	lazy = false,
 	build = ":TSUpdate",
-	main = "nvim-treesitter.configs",
 	opts = {
 		enable = true,
 		ensure_installed = {
@@ -32,7 +31,7 @@ return {
 		highlight = { enable = true },
 	},
     config = function(_, opts)
-        require("nvim-treesitter.configs").setup(opts)
+        require("nvim-treesitter").setup(opts)
         vim.opt.foldmethod = "expr"
         vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
         vim.opt.foldenable = false
