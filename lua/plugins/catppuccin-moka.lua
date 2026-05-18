@@ -29,10 +29,13 @@ return {
     integrations = {
         lualine = true,
         nvimtree = true,
-        notify = true
+        notify = true,
+        treesitter = true,
     },
     config = function()
-        vim.cmd.colorscheme("catppuccin-nvim")
+        vim.cmd.colorscheme("catppuccin")
     end
+
+
 
 }
