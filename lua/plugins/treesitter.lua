@@ -4,7 +4,6 @@ return {
 	lazy = false,
 	build = ":TSUpdate",
 	opts = {
-		enable = true,
 		ensure_installed = {
 			"c",
 			"lua",
@@ -28,12 +27,15 @@ return {
 		indent = {
 			enable = true,
 		},
-		highlight = { enable = true },
+		highlight = {
+			enable = true
+		},
 	},
-    config = function(_, opts)
-        require("nvim-treesitter").setup(opts)
-        vim.opt.foldmethod = "expr"
-        vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-        vim.opt.foldenable = false
-    end,
+	config = function(_, opts)
+		require("nvim-treesitter.config").setup(opts)
+		vim.opt.foldmethod = "expr"
+		vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- Modernized TS folding API
+		vim.opt.foldenable = false
+	end,
 }
+
