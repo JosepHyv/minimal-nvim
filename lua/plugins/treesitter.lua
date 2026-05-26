@@ -1,10 +1,9 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	branch = "main",
 	lazy = false,
 	build = ":TSUpdate",
-	opts = {
-		ensure_installed = {
+	config = function()
+		local parsers = {
 			"c",
 			"lua",
 			"vim",
@@ -21,20 +20,26 @@ return {
 			"cpp",
 			"css",
 			"csv",
-		},
-		sync_install = true,
-		auto_install = true,
-		indent = {
-			enable = true,
-		},
-		highlight = {
-			enable = true
-		},
-	},
-	config = function(_, opts)
-		require("nvim-treesitter.config").setup(opts)
+		}
+
+		require("nvim-treesitter").setup {
+			install_dir = vim.fn.stdpath("data") .. "/site",
+		}
+
+		require("nvim-treesitter").install(parsers)
+
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "*",
+			callback = function()
+				pcall(vim.treesitter.start)
+				pcall(function()
+					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				end)
+			end,
+		})
+
 		vim.opt.foldmethod = "expr"
-		vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- Modernized TS folding API
+		vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 		vim.opt.foldenable = false
 	end,
 }
